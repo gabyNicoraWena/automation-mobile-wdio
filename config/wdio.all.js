@@ -27,7 +27,6 @@ config.capabilities = [
     resetKeyboard: true,
     noReset: true,
     nativeInstrumentsLib: true,
-    isolateSimDevice: true,
     platformVersion: "13.3",
     automationName: "XCUITest",
     deviceName: "iPhone 11",

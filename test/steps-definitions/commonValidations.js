@@ -50,8 +50,8 @@ Then('user wait to see {string}', async screen => {
   }
 })
 
-Then('User press on {string} after wait {int} seconds', { timeout: 140000 }, async (element, timeout) => {
-  const element = FindElement(element)
+Then('User press on {string} after wait {int} seconds', { timeout: 140000 }, async (zarlanga, timeout) => {
+  const element = FindElement(zarlanga)
   await(await element).waitForDisplayed({
     timeout: timeout * 1000,
     reverse: false,
@@ -196,9 +196,9 @@ Then('user views the detail of the {int} plan for zip code {string}', async (pla
 
 })
 
-Then('user see text on screen {string}', async element => {
-  const [page, method] = ClassFactory(element)
-  await wdioExpect(await(await page[method]())).toExist({ wait: 30000, message: 'No se encontro el elemento o texto : ' + element + ' en la vista' })
+Then('user see text on screen {string}', async objet => {
+  const element = FindElement(objet)
+  await wdioExpect(await(await element)).toExist({ wait: 30000, message: 'No se encontro el elemento o texto : ' + element + ' en la vista' })
 })
 
 Then('user capture balance {string}', async screen=> {

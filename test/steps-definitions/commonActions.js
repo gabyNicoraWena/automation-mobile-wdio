@@ -1,4 +1,4 @@
-import { When } from "@cucumber/cucumber";
+import { When, Then } from "@cucumber/cucumber";
 import { find } from 'lodash'
 import { v4 as uuid } from 'uuid'
 
@@ -138,9 +138,9 @@ When('user clear field {string}', async (field) => {
 })
 
 When('user types {string} on field {string}', async (string, screen) => {
-  const [page, method] = ClassFactory(screen)
-  await(await page[method]()).click()
-  await(await page[method]()).addValue(string)
+  const element = FindElement(screen)
+  await(await element).click()
+  await(await element).addValue(string)
 })
 
 When('user types {string} on Chat input', async string => {
@@ -526,8 +526,8 @@ When('user scrolls to see element {string}', async element => {
 
 //2
 When('user tap on {string}', async text => {
-  const [page, method] = ClassFactory(text)
-  await(await page[method]()).click()
+  const element = await FindElement(text)
+  await (await element).click()
 })
 
 //NO FUNCIONA EN IOS
@@ -576,7 +576,7 @@ When('change wiremock scenario {string} to status {string}', async (scenario, st
 })
 
 
-Then('user activate physical card', async () => {
+When('user activate physical card', async () => {
   const { email, deviceId } = World
   if (driver.isAndroid) {
     const appBundleId = await driver.getCurrentPackage()

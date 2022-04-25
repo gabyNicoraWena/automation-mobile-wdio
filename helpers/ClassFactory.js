@@ -11,7 +11,7 @@ const createObject = async selector => {
   }
 }
 
-export const FindElement = name => {
+export const FindElement = async name => {
   
   var [page, element] = name.split('.')
 
@@ -20,9 +20,9 @@ export const FindElement = name => {
   if (elementSelectors[element] == null) {
 
     if (driver.isAndroid == true) {
-      method += "_Android"
+      element += "_Android"
     } else {
-      method += "_iOS"
+      element += "_iOS"
     }
   }
 

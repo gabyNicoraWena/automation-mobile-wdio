@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Login" timestamp="2022-04-25T17:20:24" time="20.025" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Login"/>
+      <property name="capabilities" value="r5ct112bnjj.android.12"/>
+      <property name="featureFile" value="./test/features/Login/BasicLoginFlow.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-samsunggalaxys22ultra.12_0.Login" name="User LoginScreen" time="18.867" file="./test/features/Login/BasicLoginFlow.feature">
+      <system-out><![CDATA[
+✅ Given user tap on "login.ingresaTuMail"✅ And user types "ios_apple@wenance.com" on field "login.ingresaTuMail"✅ And user tap on "login.ingresaTuPass"✅ And user types "Test1234" on field "login.ingresaTuPass"✅ And user tap on "login.btnIngresar"✅ Then getPageSource "2000"✅ Then user see text on screen "login.labelPassError"
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
