@@ -20,8 +20,6 @@ config.capabilities = [
     automationName: 'XCUITest',
     deviceName: IOS_DEVICE_BS || 'iPhone 11 Pro Max',
     app: IOS_APP_BS,
-    real_mobile: true,
-     "browserstack.timezone" : "Buenos_Aires",
      "browserstack.appium_version": "1.22.0",
   },
 ]
