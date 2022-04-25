@@ -1,6 +1,6 @@
-const { config } = require('./wdio.bs.shared')
+import { config } from './wdio.bs.shared';
 
-const { IOS_VERSION, IOS_DEVICE_NAME, IOS_APP_BS, IOS_OSVERSION_BS, IOS_DEVICE_BS } = process.env
+const { IOS_APP_BS, IOS_OSVERSION_BS, IOS_DEVICE_BS } = process.env
 
 config.capabilities = [
   {
@@ -16,7 +16,6 @@ config.capabilities = [
     autoGrantPermissions: true,
     autoAcceptAlerts: true,
     nativeInstrumentsLib: true,
-    isolateSimDevice: true,
     platformVersion: IOS_OSVERSION_BS || '14',
     automationName: 'XCUITest',
     deviceName: IOS_DEVICE_BS || 'iPhone 11 Pro Max',

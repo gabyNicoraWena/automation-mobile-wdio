@@ -39,7 +39,6 @@ config.capabilities = [
         autoGrantPermissions: true,
         autoAcceptAlerts: true,
         nativeInstrumentsLib: true,
-        isolateSimDevice: true,
         platformVersion: process.env.IOS_VERSION,
         automationName: 'XCUITest',
         deviceName: process.env.IOS_DEVICE_NAME,
