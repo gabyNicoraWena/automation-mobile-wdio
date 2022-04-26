@@ -23,7 +23,7 @@ export const ClassFactory =  name => {
 
 export const ElementFactory = name => AppScreen.createObject(name)
 
-export const FindElement = name => {
+export const FindElement = async name => {
   
   var [classname, method] = name.split('.')
 
@@ -38,5 +38,5 @@ export const FindElement = name => {
     }
   }
 
-  return AppScreen.createObject(pageSelectors[method])
+  return await AppScreen.createObject(pageSelectors[method])
 }
