@@ -21,8 +21,6 @@ export const ClassFactory =  name => {
   return [new AppScreen(pageSelectors), method]
 }
 
-export const ElementFactory = name => AppScreen.createObject(name)
-
 export const FindElement = async name => {
   
   var [classname, method] = name.split('.')
