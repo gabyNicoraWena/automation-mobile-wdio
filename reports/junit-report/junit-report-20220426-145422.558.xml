@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Login" timestamp="2022-04-26T14:54:33" time="3.119" tests="1" failures="1" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Login"/>
+      <property name="capabilities" value="emulator-5554.android.11.universal-release_apk"/>
+      <property name="featureFile" value="./test/features/Login/BasicLoginFlow.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-emulator-5554.android.11.universal-release_apk.Login" name="User LoginScreen" time="3.093" file="./test/features/Login/BasicLoginFlow.feature">
+      <failure/>
+      <error message="Error: Revento el waitUntil esperando el elemento :login.olvideMiPass Error : TypeError: Cannot read property 'waitUntil' of undefined"/>
+      <system-out><![CDATA[
+❗ Given user wait to see "login.olvideMiPass"⚠️ And user tap on "login.ingresaTuMail"
+⚠️ And user types "ios_apple@wenance.com" on field "login.ingresaTuMail"
+⚠️ And user tap on "login.ingresaTuPass"
+⚠️ And user types "Test1234" on field "login.ingresaTuPass"
+⚠️ And user tap on "login.btnIngresar"
+⚠️ Then user see text on screen "login.labelPassError"
+]]></system-out>
+      <system-err><![CDATA[
+Error: Revento el waitUntil esperando el elemento :login.olvideMiPass Error : TypeError: Cannot read property 'waitUntil' of undefined
+    at World.<anonymous> (/Users/user/repos/wdio-develop/test/steps-definitions/commonValidations.js:49:11)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>
