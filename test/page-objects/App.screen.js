@@ -20,6 +20,6 @@ export default class AppScreen {
   }
 
   async createObject(key, selector) {
-    this[key] = async () => await $$(selector)
+    this[key] = async () => await $(selector)
   }
 }

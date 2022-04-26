@@ -1,4 +1,4 @@
-import { Given } from "@cucumber/cucumber";
+import { Given, When } from "@cucumber/cucumber";
 import { find } from 'lodash'
 import { v4 as uuid } from 'uuid'
 import { FindElement } from '../../helpers/ClassFactory';

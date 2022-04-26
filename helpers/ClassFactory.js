@@ -1,23 +1,15 @@
+import AppScreen from '../test/page-objects/App.screen'
 import listSelectors from '../test/page-objects/listSelectors'
 
 const pickSelectorsByClassName = name => listSelectors[name]
 
-const createObject = async selector => {
-  var elementos = await $$(selector)
-  if(elementos.length > 1) {
-    return elementos     
-  } else {
-    return elementos[0]
-  }
-}
-
-export const FindElement = name => {
+export const ClassFactory =  name => {
   
-  var [page, element] = name.split('.')
+  var [classname, method] = name.split('.')
 
-  var elementSelectors = pickSelectorsByClassName(page)
+  var pageSelectors = pickSelectorsByClassName(classname)
 
-  if (elementSelectors[element] == null) {
+  if (pageSelectors[method] == null) {
 
     if (driver.isAndroid == true) {
       method += "_Android"
@@ -26,6 +18,25 @@ export const FindElement = name => {
     }
   }
 
-  return createObject(elementSelectors[element])
+  return [new AppScreen(pageSelectors), method]
 }
 
+export const ElementFactory = name => AppScreen.createObject(name)
+
+export const FindElement = name => {
+  
+  var [classname, method] = name.split('.')
+
+  var pageSelectors = pickSelectorsByClassName(classname)
+
+  if (pageSelectors[method] == null) {
+
+    if (driver.isAndroid == true) {
+      method += "_Android"
+    } else {
+      method += "_iOS"
+    }
+  }
+
+  return AppScreen.createObject(pageSelectors[method])
+}

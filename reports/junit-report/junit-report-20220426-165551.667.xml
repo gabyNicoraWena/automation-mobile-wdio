@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Login" timestamp="2022-04-26T16:56:30" time="18.321" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Login"/>
+      <property name="capabilities" value="emulator-5554.android.11.universal-release_apk"/>
+      <property name="featureFile" value="./test/features/Login/BasicLoginFlow.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-emulator-5554.android.11.universal-release_apk.Login" name="User LoginScreen" time="18.296" file="./test/features/Login/BasicLoginFlow.feature">
+      <system-out><![CDATA[
+✅ Given user tap on "login.ingresaTuMail"✅ And user types "ios_apple@wenance.com" on field "login.ingresaTuMail"✅ And user tap on "login.ingresaTuPass"✅ And user types "Test1234" on field "login.ingresaTuPass"✅ And user tap on "login.btnIngresar"✅ Then user see text on screen "login.labelPassError"
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

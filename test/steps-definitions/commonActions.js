@@ -1,4 +1,4 @@
-import { When } from "@cucumber/cucumber";
+import { When, Then } from "@cucumber/cucumber";
 import { find } from 'lodash'
 import { v4 as uuid } from 'uuid'
 
