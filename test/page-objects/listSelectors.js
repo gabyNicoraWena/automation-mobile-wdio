@@ -6,7 +6,6 @@ const listSelectors = {
     ingresaTuMail: '//*[@text="Ingresá tu e-mail"]',
     btnIngresar: '//*[@text="Ingresar"]',
     labelPassError: '//*[@text="El nombre de usuario o contraseña son incorrectos"]',
-}
+},
 }
 export default listSelectors
-

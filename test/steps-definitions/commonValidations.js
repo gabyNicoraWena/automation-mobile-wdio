@@ -1,6 +1,6 @@
 import { Then } from "@cucumber/cucumber";
 import { find } from 'lodash';
-import { FindElement, ElementFactory} from '../../helpers/ClassFactory';
+import { FindElement, ClassFactory } from '../../helpers/ClassFactory';
 import { Gestures } from '../../helpers/Gestures';
 import { getPlansByZipCode, getATMPlansByZipCode , getBolsoPlansByZipCode} from '../utils/services/insurance/InsuranceServices';
 import { getPersonByEmail, getPersonById } from '../utils/services/PeopleHub/PeopleHub';
@@ -50,13 +50,14 @@ Then('user wait to see {string}', async screen => {
   }
 })
 
-Then('User press on {string} after wait {int} seconds', { timeout: 140000 }, async (zarlanga, timeout) => {
-  const element = FindElement(zarlanga)
-  await(await element).waitForDisplayed({
+
+Then('User press on {string} after wait {int} seconds', { timeout: 140000 }, async (element, timeout) => {
+  const object = FindElement(element)
+  await(await object).waitForDisplayed({
     timeout: timeout * 1000,
     reverse: false,
   })
-  await(await element).click()
+  await(await object).click()
 })
 
 Then('user {string} sign up request is reset', async registeredMail => {
