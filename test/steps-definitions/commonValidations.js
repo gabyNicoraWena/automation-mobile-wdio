@@ -1,6 +1,6 @@
 import { Then } from "@cucumber/cucumber";
 import { find } from 'lodash';
-import { FindElement } from '../../helpers/ClassFactory';
+import { FindElement, ElementFactory} from '../../helpers/ClassFactory';
 import { Gestures } from '../../helpers/Gestures';
 import { getPlansByZipCode, getATMPlansByZipCode , getBolsoPlansByZipCode} from '../utils/services/insurance/InsuranceServices';
 import { getPersonByEmail, getPersonById } from '../utils/services/PeopleHub/PeopleHub';
@@ -34,11 +34,11 @@ Then('reset the app', async () => {
 })
 
 Then('user wait to see {string}', async screen => {
-  const [page, method] = ClassFactory(screen)
+  const element = await FindElement(screen)
   try {
-  await(await page[method]()).waitUntil(
-    async function () {
-      return await this.isDisplayed()
+   await (element).waitUntil(
+    async () => {
+     return await this.isDisplayed()
     },
     {
       timeout: 10000,
@@ -46,7 +46,7 @@ Then('user wait to see {string}', async screen => {
     }
   )
   } catch (error){
-    throw new Error('Revento el waitUntil esperando el elemento :' + screen)
+    throw new Error('Revento el waitUntil esperando el elemento :' + screen + " Error : " + error)
   }
 })
 
@@ -196,9 +196,9 @@ Then('user views the detail of the {int} plan for zip code {string}', async (pla
 
 })
 
-Then('user see text on screen {string}', async objet => {
-  const element = FindElement(objet)
-  await wdioExpect(await(await element)).toExist({ wait: 30000, message: 'No se encontro el elemento o texto : ' + element + ' en la vista' })
+Then('user see text on screen {string}', async object => {
+  const element =  FindElement(object)
+  await wdioExpect(await (await element)).toExist({ wait: 30000, message: 'No se encontro el elemento o texto : ' + element + ' en la vista' })
 })
 
 Then('user capture balance {string}', async screen=> {

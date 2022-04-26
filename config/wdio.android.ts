@@ -2,7 +2,6 @@ import { config } from './wdio.shared';
 
 config.capabilities = [
   {
-    waitforTimeout: 30000,
     commandTimeout: 30000,
     browserName: "Android",
     platformName: "Android",

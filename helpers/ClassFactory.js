@@ -26,6 +26,6 @@ export const FindElement = async name => {
     }
   }
 
-  return createObject(elementSelectors[element])
+  return await createObject(elementSelectors[element])
 }
 
