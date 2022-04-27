@@ -34,9 +34,9 @@ Then('reset the app', async () => {
 })
 
 Then('user wait to see {string}', async screen => {
-  const [page, method] = ClassFactory(screen)
+  const element = FindElement(screen)
   try {
-  await(await page[method]()).waitUntil(
+  await(await element).waitUntil(
     async function () {
       return await this.isDisplayed()
     },
@@ -197,7 +197,7 @@ Then('user views the detail of the {int} plan for zip code {string}', async (pla
 })
 
 Then('user see text on screen {string}', async object => {
-const element = await FindElement(object)
+const element = await FindElement(object)  
   await wdioExpect(await element).toExist({ wait: 30000, message: 'No se encontro el elemento o texto : ' + element + ' en la vista' })
 })
 
