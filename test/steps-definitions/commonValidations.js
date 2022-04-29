@@ -34,11 +34,11 @@ Then('reset the app', async () => {
 })
 
 Then('user wait to see {string}', async screen => {
-  const element = await FindElement(screen)
+  const element = FindElement(screen)
   try {
-   await (element).waitUntil(
-    async () => {
-     return await this.isDisplayed()
+  await(await element).waitUntil(
+    async function () {
+      return await this.isDisplayed()
     },
     {
       timeout: 10000,
@@ -200,6 +200,7 @@ Then('user views the detail of the {int} plan for zip code {string}', async (pla
 Then('user see text on screen {string}', async object => {
   const element =  FindElement(object)
   await wdioExpect(await (await element)).toExist({ wait: 30000, message: 'No se encontro el elemento o texto : ' + element + ' en la vista' })
+
 })
 
 Then('user capture balance {string}', async screen=> {

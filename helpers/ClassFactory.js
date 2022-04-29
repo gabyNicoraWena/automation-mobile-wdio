@@ -37,4 +37,5 @@ export const FindElement = async name => {
   }
 
   return await AppScreen.createObject(pageSelectorsJson[element])
+
 }

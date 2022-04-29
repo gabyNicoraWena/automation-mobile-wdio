@@ -13,7 +13,7 @@ Dependencies needed:
 Homebrew/install/master/install)"
  - Node (v16 or newer). brew install node
  - Android Studio.
- - Bds-app proyect (duh!).
+ - app proyect (duh!).
 
 ## Getting Started
 
